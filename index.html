@@ -114,6 +114,10 @@
               </li>
             </ul>
           </div>
+          <div class="language-selector">
+            <button onclick="setLanguage('en')">English</button>
+            <button onclick="setLanguage('es')">Español</button>
+          </div>
         </div>
       </nav>
     </header>
@@ -177,11 +181,14 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8">
-            <h4>Request a call back right now ?</h4>
-            <span>Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</span>
+            <h4 data-lang="en">Request a call back right now ?</h4>
+            <span data-lang="en">An advisor will contact you shortly to assist you.</span>
+            <h4 data-lang="es" style="display: none;">¿Solicitar una llamada ahora?</h4>
+            <span data-lang="es" style="display: none;">Un asesor se contactará con usted a la brevedad para asisitrlo.</span>
           </div>
           <div class="col-md-4">
-            <a href="../contact.html" class="border-button">Contact Us</a>
+            <a href="../contact.html" class="border-button" data-lang="en">Contact Us</a>
+            <a href="../contact.html" class="border-button" data-lang="es" style="display: none;">Contactar Ahora</a>
           </div>
         </div>
       </div>
@@ -192,17 +199,22 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Financial <em>Services</em></h2>
-              <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
+              <h2 data-lang="en">Financial <em>Services</em></h2>
+              <span data-lang="en">Our services at your disposal.</span>
+              <h2 data-lang="es" style="display: none;">Servicios <em>Financieros</em></h2>
+              <span data-lang="es" style="display: none;">Nuestros servicios a su disposicion.</span>
             </div>
           </div>
           <div class="col-md-4">
             <div class="service-item">
               <img src="assets/images/service_01.jpg" alt="">
               <div class="down-content">
-                <h4>Digital Currency</h4>
-                <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button">Read More</a>
+                <h4 data-lang="en">Accounting </h4>
+                <p data-lang="en">Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
+                <a href="" class="filled-button" data-lang="en">Read More</a>
+                <h4 data-lang="es" style="display: none;">Contabilidad </h4>
+                <p data-lang="es" style="display: none;">Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
+                <a href="" class="filled-button" data-lang="es" style="display: none;">Ver mas </a>
               </div>
             </div>
           </div>
@@ -210,9 +222,12 @@
             <div class="service-item">
               <img src="assets/images/service_02.jpg" alt="">
               <div class="down-content">
-                <h4>Market Analysis</h4>
-                <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button">Read More</a>
+                <h4 data-lang="en">Market Analysis</h4>
+                <p data-lang="en">Analysis of international and national markets. Creation of custom portfolios.</p>
+                <a href="" class="filled-button" data-lang="en">Read More</a>
+                <h4 data-lang="es" style="display: none;">Analisis de Mercados</h4>
+                <p data-lang="es" style="display: none;">Análisis de mercados internacionales y nacionales. Creación de portafolios a medida.</p>
+                <a href="" class="filled-button" data-lang="es" style="display: none;">Ver mas</a>
               </div>
             </div>
           </div>
@@ -220,9 +235,12 @@
             <div class="service-item">
               <img src="assets/images/service_03.jpg" alt="">
               <div class="down-content">
-                <h4>Historical Data</h4>
-                <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button">Read More</a>
+                <h4 data-lang="en">Data analysis and automation</h4>
+                <p data-lang="en">Creation and calibration of Machine Learning models. Collection and processing of data analysis, automatically.</p>
+                <a href="" class="filled-button" data-lang="en">Read More</a>
+                <h4 data-lang="es" style="display: none;">Análisis y Automatización de datos</h4>
+                <p data-lang="es" style="display: none;">Creación y calibración de modelos de Machine Learning. Recopilación y procesamiento de análisis de datos, de forma automática.</p>
+                <a href="" class="filled-button" data-lang="es" style="display: none;">Ver mas</a>
               </div>
             </div>
           </div>
