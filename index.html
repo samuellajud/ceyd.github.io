@@ -28,7 +28,7 @@
   }
 
   .language-selector button {
-      background-color: #333;
+      background-color: #A4C639;
       color: #fff;
       border: none;
       padding: 10px;
@@ -38,7 +38,7 @@
   }
 
   .language-selector button:hover {
-      background-color: #555;
+      background-color: #afafaf;
   }
 </style>
   </head>
@@ -85,25 +85,32 @@
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="../index.html"><h2>Finance Business</h2></a>
+          <a class="navbar-brand" href="../index.html" data-lang="en"><h2>Finance Business</h2></a>
+          <a class="navbar-brand" href="../index.html" data-lang="es" style="display: none;"><h2>Finanzas para Empresas</h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home
+                <a class="nav-link" href="index.html" data-lang="en">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+                <a class="nav-link" href="index.html" data-lang="es" style="display: none;">Inicio
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
+                <a class="nav-link" href="about.html" data-lang="en">About Us</a>
+                <a class="nav-link" href="about.html" data-lang="es" style="display: none;">Sobre Nosotros</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="services.html">Our Services</a>
+                <a class="nav-link" href="services.html" data-lang="en">Our Services</a>
+                <a class="nav-link" href="services.html" data-lang="es" style="display: none;">Nuestros Servicios</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+                <a class="nav-link" href="contact.html" data-lang="en">Contact Us</a>
+                <a class="nav-link" href="contact.html" data-lang="es" style="display: none;">Contacto</a>
               </li>
             </ul>
           </div>
