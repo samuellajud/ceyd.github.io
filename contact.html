@@ -18,6 +18,29 @@
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+
+    <style>
+      .language-selector {
+          position: absolute;
+          top: -10px;
+          right: -90px;
+          z-index: 1000;
+      }
+    
+      .language-selector button {
+          background-color: #A4C639;
+          color: #fff;
+          border: none;
+          padding: 5px;
+          margin: 0 5px;
+          cursor: pointer;
+          border-radius: 5px;
+      }
+    
+      .language-selector button:hover {
+          background-color: #b5d159;
+      }
+    </style>
 <!--
 
 Finance Business TemplateMo
@@ -55,6 +78,10 @@ https://templatemo.com/tm-545-finance-business
               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
               <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              <li><div class="language-selector">
+                <button onclick="setLanguage('en')">English</button>
+                <button onclick="setLanguage('es')">Español</button>
+              </li>
             </ul>
           </div>
         </div>
@@ -303,6 +330,21 @@ https://templatemo.com/tm-545-finance-business
           }
       }
     </script>
+     <script>
+          function setLanguage(lang) {
+            var elements = document.querySelectorAll('[data-lang]');
+    
+            elements.forEach(function(elements) {
+            // Si el valor del atributo data-lang coincide con el idioma especificado, muestra el elemento
+              if (elements.getAttribute('data-lang') === lang) {
+                elements.style.display = '';
+              } else {
+                // Si no coincide, oculta el elemento
+                elements.style.display = 'none';
+              }
+            });
+          }
+       </script>
 
   </body>
 </html>
