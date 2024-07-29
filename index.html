@@ -21,25 +21,41 @@
 
 <style>
   .language-selector {
-      position: absolute;
-      top: -10px;
-      right: -100px;
-      z-index: 1000;
-  }
+    position: absolute;
+    top: -10px;
+    right: -125px;
+    z-index: 1000;
+   
+    padding: 0px 20px; /* Añadiendo padding */
+}
 
-  .language-selector button {
-      background-color: #A4C639;
-      color: #fff;
-      border: none;
-      padding: 5px;
-      margin: 0 5px;
-      cursor: pointer;
-      border-radius: 5px;
-  }
+.language-selector button {
+    background-color: #A4C639;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px; /* Añadiendo font-size */
+    font-weight: 600; /* Añadiendo font-weight */
+}
 
-  .language-selector button:hover {
-      background-color: #b5d159;
-  }
+.language-selector button:hover {
+    background-color: #b5d159;
+    border: 1px solid rgba(250,250,250,0.3); /* Añadiendo borde al hover */
+}
+.language-selector button:first-child {
+    border-left: 1px solid rgba(250,250,250,0.3); /* Borde izquierdo para el primer botón */
+    border-right: 0; /* Sin borde derecho */
+}
+.language-selector button:last-child {
+    border-left: 0; /* Sin borde izquierdo */
+    border-right: 1px solid rgba(250,250,250,0.3); /* Borde derecho para el segundo botón */
+}
+.language-selector button:hover {
+    background-color: #b5d159;
+}
 </style>
   </head>
 
@@ -75,7 +91,8 @@
               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
               <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><div class="language-selector">
+              <li>
+                <div class="language-selector">
                 <button onclick="setLanguage('en')">English</button>
                 <button onclick="setLanguage('es')">Español</button>
               </li>
