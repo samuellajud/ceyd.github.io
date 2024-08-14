@@ -734,7 +734,36 @@ ul.slick-dots {
 	margin: 25px auto 0px auto;
 }
 
-
+/*Grid */
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+	grid-template-rows: auto auto;  /* Dos filas que se ajustan al contenido */
+	gap: 20px; /* Espacio entre las celdas */
+  }
+  
+  .grid-item {
+	padding: 10px;
+  }
+  
+  .grid-item h1 {
+	margin: 0;
+	font-size: 24px;
+	color: #333;
+  }
+  
+  .grid-item span {
+	display: block;
+	margin-top: 5px;
+	color: #666;
+	font-size: 14px;
+  }
+  
+  @media (max-width: 768px) {
+	.grid-container {
+	  grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+	}
+  }
 
 
 /* Call Back Style */
