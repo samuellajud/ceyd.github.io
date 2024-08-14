@@ -744,6 +744,15 @@ ul.slick-dots {
   
   .grid-item {
 	padding: 10px;
+	border: 1px solid #0a3d62; /* Línea divisoria azul marino */
+	border-radius: 5px; /* Esquinas redondeadas (opcional) */
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center; /* Alineación centrada del texto */
+	height: 150px; /* Ajusta la altura según necesites */
   }
   
   .grid-item h1 {
@@ -753,7 +762,6 @@ ul.slick-dots {
   }
   
   .grid-item span {
-	display: block;
 	margin-top: 5px;
 	color: #666;
 	font-size: 14px;
@@ -764,8 +772,7 @@ ul.slick-dots {
 	  grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
 	}
   }
-
-
+  
 /* Call Back Style */
 
 .callback-services {
