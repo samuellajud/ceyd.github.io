@@ -753,6 +753,14 @@ ul.slick-dots {
 	align-items: center;
 	text-align: center; /* Alineación centrada del texto */
 	height: 150px; /* Ajusta la altura según necesites */
+	
+	text-decoration: none; /* Elimina el subrayado del enlace */
+	color: inherit; /* Mantiene el color del texto */
+	transition: background-color 0.3s ease; /* Suaviza el cambio de color */
+  }
+  
+  .grid-item:hover {
+	background-color: #f0f0f0; /* Cambia el color de fondo al pasar el ratón */
   }
   
   .grid-item h1 {
