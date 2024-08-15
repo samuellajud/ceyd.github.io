@@ -744,7 +744,7 @@ ul.slick-dots {
   
   .grid-item {
 	padding: 10px;
-	border: 1px solid #0a3d62; /* Línea divisoria azul marino */
+	border: 1px solid #37b653; /* Línea divisoria azul marino */
 	border-radius: 5px; /* Esquinas redondeadas (opcional) */
 	
 	display: flex;
@@ -760,13 +760,13 @@ ul.slick-dots {
   }
   
   .grid-item:hover {
-	background-color: #f0f0f0; /* Cambia el color de fondo al pasar el ratón */
+	background-color: #3f8a3f; /* Cambia el color de fondo al pasar el ratón */
   }
   
   .grid-item h1 {
 	margin: 0;
 	font-size: 24px;
-	color: #333;
+	color: #f8f7f7;
   }
   
   .grid-item span {
