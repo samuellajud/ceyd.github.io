@@ -9,8 +9,157 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts: Merriweather (serif) y Poppins (sans-serif) -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <!-- Estilo personalizado -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    :root {
+      --primary: #556B2F;      /* Verde oliva */
+      --secondary: #E9D8A6;    /* Beige tierra */
+      --accent: #1A237E;       /* Azul marino */
+      --text-dark: #222;
+      --text-light: #fff;
+    }
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background-color: var(--secondary);
+      color: var(--text-dark);
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Merriweather', serif;
+      color: var(--primary);
+    }
+    .navbar {
+      background-color: var(--secondary) !important;
+      border-bottom: 2px solid var(--primary);
+    }
+    .navbar-brand h2 {
+      color: var(--accent);
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .nav-link {
+      color: var(--primary) !important;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: var(--accent) !important;
+    }
+    .main-banner {
+      background-image: url('assets/images/banner-image.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+    }
+    .main-banner .text-content {
+      background: rgba(26, 35, 126, 0.7); /* azul marino translúcido */
+      color: var(--text-light);
+      border-radius: 12px;
+      max-width: 500px;
+    }
+    .section-heading h2 {
+      color: var(--accent);
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+    }
+    .section-heading span {
+      color: var(--primary);
+      font-size: 1.1rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    .service-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(85,107,47,0.07);
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--secondary);
+      transition: box-shadow 0.2s;
+    }
+    .service-item:hover {
+      box-shadow: 0 4px 20px rgba(26,35,126,0.12);
+      border-color: var(--accent);
+    }
+    .service-item h4 {
+      color: var(--primary);
+      font-family: 'Merriweather', serif;
+      margin-top: 1rem;
+    }
+    .service-item .filled-button {
+      background: var(--primary);
+      color: var(--text-light);
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 20px;
+      margin-top: 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .service-item .filled-button:hover {
+      background: var(--accent);
+      color: var(--text-light);
+    }
+    .contact-form .form-control {
+      border-radius: 8px;
+      border: 1px solid var(--primary);
+    }
+    .btn-primary {
+      background: var(--accent);
+      border: none;
+      border-radius: 20px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--primary);
+    }
+    footer {
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 2rem 0 1rem 0;
+      margin-top: 3rem;
+    }
+    footer h4 {
+      color: var(--secondary);
+      font-family: 'Merriweather', serif;
+    }
+    footer a {
+      color: var(--secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: var(--accent);
+    }
+    .sub-footer {
+      border-top: 1px solid rgba(233,216,166,0.3);
+      margin-top: 1rem;
+      padding-top: 1rem;
+      text-align: center;
+      color: var(--secondary);
+      font-size: 0.95rem;
+    }
+    .language-selector button {
+      background: var(--accent);
+      color: var(--text-light);
+      border: none;
+      border-radius: 50px;
+      padding: 0.3rem 1rem;
+      margin-left: 0.5rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .language-selector button:hover {
+      background: var(--primary);
+    }
+  </style>
 </head>
 
 <body>
@@ -22,9 +171,9 @@
   </div>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="#"><h2>C.E.yD.</h2></a>
+      <a class="navbar-brand" href="#"><h2>C.E.yD.</h2><h3> Contabilidad, Economia y Datos</h3></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -39,10 +188,10 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="main-banner py-5" style="background-image: url('assets/images/banner-image.jpg'); background-size: cover; background-position: center;">
+  <section class="main-banner py-5">
     <div class="container text-white">
-      <div class="text-content p-4 bg-dark bg-opacity-50 rounded">
-        <h4>Consultoría en Contabilidad, Economía y Datos</h4>
+      <div class="text-content p-4">
+        <h4>SERVICIOS INTELIGENTES</h4>
         <p>Maximizamos el valor financiero de tu empresa con análisis y automatización inteligente.</p>
       </div>
     </div>
@@ -51,14 +200,14 @@
   <!-- Servicios -->
   <section id="servicios" class="py-5">
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading mb-4">
         <h2>Servicios Profesionales</h2>
         <span>Soluciones financieras a medida</span>
       </div>
       <div class="row">
         <div class="col-lg-4 col-md-6">
           <div class="service-item text-center">
-            <img src="assets/images/service-01.jpg" alt="">
+            <img src="assets/images/service-01.jpg" alt="" class="img-fluid rounded">
             <h4>Estudios de Costos</h4>
             <p>Optimización financiera de tu actividad agrícola y ganadera.</p>
             <a href="#" class="filled-button">Ver más</a>
@@ -66,7 +215,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="service-item text-center">
-            <img src="assets/images/service-02.jpg" alt="">
+            <img src="assets/images/service-02.jpg" alt="" class="img-fluid rounded">
             <h4>Rendimientos y Rentabilidad</h4>
             <p>Identificamos oportunidades de mejora continua en tu negocio.</p>
             <a href="#" class="filled-button">Ver más</a>
@@ -74,7 +223,7 @@
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="service-item text-center">
-            <img src="assets/images/service-03.jpg" alt="">
+            <img src="assets/images/service-03.jpg" alt="" class="img-fluid rounded">
             <h4>Financiamiento e Inversión</h4>
             <p>Asistencia integral para capitalización e inversión eficiente.</p>
             <a href="#" class="filled-button">Ver más</a>
@@ -85,9 +234,9 @@
   </section>
 
   <!-- Contacto -->
-  <section id="contacto" class="py-5 bg-light">
+  <section id="contacto" class="py-5" style="background: #f9f7f3;">
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading mb-4">
         <h2>Contacto</h2>
         <span>Estamos para ayudarte</span>
       </div>
@@ -111,14 +260,14 @@
   </section>
 
   <!-- Footer -->
-  <footer class="text-white">
+  <footer>
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
           <h4>C.E.yD.</h4>
           <p>Consultoría especializada en Contabilidad, Economía y Datos.</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
           <h4>Servicios</h4>
           <ul class="list-unstyled">
             <li><a href="#">Estudios de Costos</a></li>
@@ -126,7 +275,7 @@
             <li><a href="#">Inversiones y Financiamiento</a></li>
           </ul>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
           <h4>Contacto</h4>
           <p>Email: contacto@ceyd.com</p>
           <p>Tel: +54 381 1234567</p>
