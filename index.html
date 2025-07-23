@@ -1,611 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C.E.yD. - Consultoría Financiera</title>
 
-  <head>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Estilo personalizado -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+<body>
 
-    <title>Finance Business </title>
-   <!-- Bootstrap 5.3 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Hoja de estilo personalizada -->
-    <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Selector de idioma -->
+  <div class="language-selector position-absolute top-0 end-0 p-2">
+    <button onclick="setLanguage('es')">ES</button>
+    <button onclick="setLanguage('en')">EN</button>
+  </div>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand" href="#"><h2>C.E.yD.</h2></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="cotizaciones.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Casos de Éxito</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
+  <!-- Hero Section -->
+  <section class="main-banner py-5" style="background-image: url('assets/images/banner-image.jpg'); background-size: cover; background-position: center;">
+    <div class="container text-white">
+      <div class="text-content p-4 bg-dark bg-opacity-50 rounded">
+        <h4>Consultoría en Contabilidad, Economía y Datos</h4>
+        <p>Maximizamos el valor financiero de tu empresa con análisis y automatización inteligente.</p>
+      </div>
+    </div>
+  </section>
 
-<style>
-  .language-selector {
-    position: absolute;
-    top: -10px;
-    right: -110px;
-    z-index: 1000;
-   
-    padding: 0px 20px; /* Añadiendo padding */
-}
-
-.language-selector button {
-    background-color: #A4C639;
-    color: #fff;
-    border: none;
-    padding: 5px;
-    margin: 0 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px; /* Añadiendo font-size */
-    font-weight: 600; /* Añadiendo font-weight */
-}
-
-.language-selector button:hover {
-    background-color: #b5d159;
-    border: 1px solid rgba(250,250,250,0.3); /* Añadiendo borde al hover */
-}
-.language-selector button:first-child {
-    border-left: 1px solid rgba(250,250,250,0.3); /* Borde izquierdo para el primer botón */
-    border-right: 0; /* Sin borde derecho */
-}
-.language-selector button:last-child {
-    border-left: 0; /* Sin borde izquierdo */
-    border-right: 1px solid rgba(250,250,250,0.3); /* Borde derecho para el segundo botón */
-}
-.language-selector button:hover {
-    background-color: #b5d159;
-}
-</style>
-  </head>
-
-  <body>
-     <!-- Language Selector -->
-
-
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
+  <!-- Servicios -->
+  <section id="servicios" class="py-5">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Servicios Profesionales</h2>
+        <span>Soluciones financieras a medida</span>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item text-center">
+            <img src="assets/images/service-01.jpg" alt="">
+            <h4>Estudios de Costos</h4>
+            <p>Optimización financiera de tu actividad agrícola y ganadera.</p>
+            <a href="#" class="filled-button">Ver más</a>
+          </div>
         </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-
-
-    <!-- Header -->
-    <div class="sub-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-xs-12">
-            <ul class="left-info">
-              <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00-17:00</a></li>
-              <li><a href="+543816684821"><i class="fa fa-phone"></i>+543816684821</a></li>
-              <li><a href="#"><img src="assets/images/campo-3.jpg" alt="Facebook" style="width: 24px; height: 24px;"></a></li>
-
-             
-            </ul>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item text-center">
+            <img src="assets/images/service-02.jpg" alt="">
+            <h4>Rendimientos y Rentabilidad</h4>
+            <p>Identificamos oportunidades de mejora continua en tu negocio.</p>
+            <a href="#" class="filled-button">Ver más</a>
           </div>
-          <div class="col-md-4">
-            <ul class="right-icons">
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><a href="#"><i class="fa fa-youtube icon"></i></a></li>
-              <li>
-                <div class="language-selector">
-                <button onclick="setLanguage('en')" data-lang="es" >English</button>
-                <button onclick="setLanguage('es')" data-lang="en" style="display: none;">Español</button>
-              </li>
-            </ul>
-          </div>
-            <!-- Language Selector -->
-          
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item text-center">
+            <img src="assets/images/service-03.jpg" alt="">
+            <h4>Financiamiento e Inversión</h4>
+            <p>Asistencia integral para capitalización e inversión eficiente.</p>
+            <a href="#" class="filled-button">Ver más</a>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <header class="">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand" href="index.html" data-lang="en" style="display: none;"><h2>Finance Business</h2></a>
-          <a class="navbar-brand" href="index.html" data-lang="es" ><h2>Finanzas para Empresas</h2></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html" data-lang="en" style="display: none;">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-                <a class="nav-link" href="index.html" data-lang="es" >Inicio
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="cotizaciones.html" data-lang="en" style="display: none;">Research</a>
-                <a class="nav-link" href="cotizaciones.html" data-lang="es" >Recomendaciones y cotizaciones </a>
-              </li>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="services.html" data-lang="en"  style="display: none;" >Our Services</a>
-                <a class="nav-link" href="services.html" data-lang="es">Nuestros Servicios</a>
-
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html" data-lang="en"  style="display: none;" >Contact Us</a>
-                <a class="nav-link" href="contact.html" data-lang="es">Contacto</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
-    <div class="main-banner header-text" id="top">
-        <div class="Modern-Slider">
-          <!-- Item en Inglés -->
-          <div class="item item-1" >
-             <div class="img-fill">
-              <div class="text-content">
-                <h6 data-lang="en" style="display: none;">we have a solid background</h6>
-                <h4 data-lang="en" style="display: none;">Market Analysis<br>&amp; Statistics</h4>
-                <p data-lang="en" style="display: none;">Team specialized in market analysis. We will create a personalized investment portfolio for you.</p>
-                <a href="contact.html" class="filled-button" data-lang="en" style="display: none;">contact us</a>
-                <h6 data-lang="es" >Tenemos un fuerte respaldo</h6>
-                <h4 data-lang="es" >Analisis Financieros<br>&amp; Consultoría</h4>
-                <p data-lang="es" >Equipo especializado en análisis de mercado. Haremos para usted un portafolio de inversiones personalizada.</p>
-                <a href="contact.html" class="filled-button" data-lang="es" >Contáctenos</a>
-
-              </div>
-            </div>
-          </div>
-          <div class="item item-2" >
-            <div class="img-fill">
-                <div class="text-content">
-                  <h6 data-lang="en" style="display: none;">we are here to support you</h6>
-                  <h4 data-lang="en" style="display: none;">Accounting<br>&amp; Management</h4>
-                  <p data-lang="en" style="display: none;">Accounting experts will be at your disposal to provide you with the best service.</p>
-                  <a href="services.html" class="filled-button" data-lang="en" style="display: none;">our services</a>
-                  <h6 data-lang="es" >Estamos para ayudarte</h6>
-                  <h4 data-lang="es" >Contabilidad<br>&amp; Gestión</h4>
-                  <p data-lang="es" >Contadores expertos estarán para acompañarte.</p>
-                  <a href="services.html" class="filled-button" data-lang="es" >Nuestros Servicios</a>
-                </div>
-            </div>
-          </div>
-          <div class="item item-3">
-            <div class="img-fill">
-                <div class="text-content">
-                  <h6 data-lang="en" style="display: none;">we are ready to help you</h6>
-                  <h6 data-lang="es" >Estamos listos para ayudarte</h6>
-                  <h4 data-lang="en" style="display: none;">Financial Analysis<br>&amp; Consulting</h4>
-                  <h4 data-lang="es" >Análisis Financiero<br>&amp; Consultoría</h4>
-                  <p data-lang="en" style="display: none;">This finance HTML template is 100% free of charge provided by TemplateMo for everyone. You can download, edit and use this layout for your business website.</p>
-                  <p data-lang="es" >Esta plantilla HTML de finanzas es 100% gratuita proporcionada por TemplateMo para todos. Puedes descargar, editar y usar este diseño para tu sitio web empresarial.</p>
-                  <a href="contact.html" class="filled-button" data-lang="en" style="display: none;">contact us</a>
-                  <a href="contact.html" class="filled-button" data-lang="es" >contáctanos</a>
-                </div>
-            </div>
-          </div>
-          <!-- // Item -->
-        </div>
-    </div>
-
-
-    <!--Quito pedido de llamdas que estab aqui, para amoldarlo mas a la pag de marchesse-->
-
-
-    <div class="services">
-      <div class="container">
+  <!-- Contacto -->
+  <section id="contacto" class="py-5 bg-light">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Contacto</h2>
+        <span>Estamos para ayudarte</span>
+      </div>
+      <form class="contact-form">
         <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2 data-lang="en" style="display: none;">Financial <em>Services</em></h2>
-              <span data-lang="en" style="display: none;">Our services at your disposal.</span>
-              <h2 data-lang="es" >Servicios <em>Financieros</em></h2>
-              <span data-lang="es" >Nuestros servicios a su disposicion.</span>
-            </div>
+          <div class="col-md-6 mb-3">
+            <input type="text" class="form-control" placeholder="Nombre">
           </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="assets/images/service_01.jpg" alt="">
-              <div class="down-content">
-                <h4 data-lang="en" style="display: none;">Accounting, economy and finance </h4>
-                <p data-lang="en" style="display: none;">Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button" data-lang="en" style="display: none;">Read More</a>
-                <h4 data-lang="es" >Contabilidad, economía y finanzas. </h4>
-                <p data-lang="es" >Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button" data-lang="es" >Ver mas </a>
-              </div>
-            </div>
+          <div class="col-md-6 mb-3">
+            <input type="email" class="form-control" placeholder="Email">
           </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="assets/images/finanzas-imagen01.jpg" alt="">
-              <div class="down-content">
-                <h4 data-lang="en" style="display: none;">Market Analysis</h4>
-                <p data-lang="en" style="display: none;">Analysis of international and national markets. Creation of custom portfolios.</p>
-                <a href="" class="filled-button" data-lang="en" style="display: none;">Read More</a>
-                <h4 data-lang="es" >Analisis de Mercados</h4>
-                <p data-lang="es" >Análisis de mercados internacionales y nacionales. Creación de portafolios a medida.</p>
-                <a href="" class="filled-button" data-lang="es" >Ver mas</a>
-              </div>
-            </div>
+          <div class="col-12 mb-3">
+            <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
           </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="assets/images/Inteligencia artificial, finanzas, banca.jpg" alt="">
-              <div class="down-content">
-                <h4 data-lang="en" style="display: none;">Data analysis and automation</h4>
-                <p data-lang="en" style="display: none;">Creation and calibration of Machine Learning models. Collection and processing of data analysis, automatically.</p>
-                <a href="" class="filled-button" data-lang="en" style="display: none;">Read More</a>
-                <h4 data-lang="es" >Análisis y Automatización de datos</h4>
-                <p data-lang="es" >Diseño, creación y calibración de modelos de Machine Learning. Recopilación y procesamiento de análisis de datos, de forma automática.</p>
-                <a href="" class="filled-button" data-lang="es" >Ver mas</a>
-              </div>
-            </div>
-                <div class="col-md-4">
-            <div class="service-item">
-              <img src="assets/images/service_01.jpg" alt="">
-              <div class="down-content">
-                <h4 data-lang="en" style="display: none;">School</h4>
-                <p data-lang="en" style="display: none;">Learn with us </p>
-                <a href="/workspaces/ceyd.github.io/Blocks y notas/202501/FLUJODECAJA.html" class="filled-button" data-lang="en" style="display: none;">Read More</a>
-                <h4 data-lang="es" >Educacion </h4>
-                <p data-lang="es" >Aprende con nostros.</p>
-                <a href="/workspaces/ceyd.github.io/Blocks y notas/202501/FLUJODECAJA.html" class="filled-button" data-lang="es" >Ver mas </a>
-              </div>
-            </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
           </div>
+        </div>
+      </form>
+    </div>
+  </section>
 
-          </div>
+  <!-- Footer -->
+  <footer class="text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4>C.E.yD.</h4>
+          <p>Consultoría especializada en Contabilidad, Economía y Datos.</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Servicios</h4>
+          <ul class="list-unstyled">
+            <li><a href="#">Estudios de Costos</a></li>
+            <li><a href="#">Optimización Financiera</a></li>
+            <li><a href="#">Inversiones y Financiamiento</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4>Contacto</h4>
+          <p>Email: contacto@ceyd.com</p>
+          <p>Tel: +54 381 1234567</p>
         </div>
       </div>
     </div>
-
-    <div class="fun-facts">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="left-content">
-              <span data-lang="en" style="display: none;">Lorem ipsum dolor sit amet</span>
-              <h2 data-lang="en" style="display: none;">Our solutions for your <em>business growth</em></h2>
-              <p data-lang="en" style="display: none;">Pellentesque ultrices at turpis in vestibulum. Aenean pretium elit nec congue elementum. Nulla luctus laoreet porta. Maecenas at nisi tempus, porta metus vitae, faucibus augue. 
-              <br><br>Fusce et venenatis ex. Quisque varius, velit quis dictum sagittis, odio velit molestie nunc, ut posuere ante tortor ut neque.</p>
-              <a href="" class="filled-button" data-lang="en" style="display: none;">Read More</a>
-              <span data-lang="es" >rapidez y compromiso</span>
-              <h2 data-lang="es" >Nuestra solucion para su <em>crecimiento empresarial</em></h2>
-              <p data-lang="es" >Pellentesque ultrices at turpis in vestibulum. Aenean pretium elit nec congue elementum. Nulla luctus laoreet porta. Maecenas at nisi tempus, porta metus vitae, faucibus augue. 
-              <br><br>Fusce et venenatis ex. Quisque varius, velit quis dictum sagittis, odio velit molestie nunc, ut posuere ante tortor ut neque.</p>
-              <a href="" class="filled-button" data-lang="es" >Ver mas</a>
-            </div>
-          </div>
-          <div class="col-md-6 align-self-center">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="count-area-content">
-                  <div class="count-digit">945</div>
-                  <div class="count-title" data-lang="en" style="display: none;">Work Hours</div>
-                  <div class="count-title" data-lang="es" >Horas Trabajadas</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="count-area-content">
-                  <div class="count-digit">1280</div>
-                  <div class="count-title" data-lang="en" style="display: none;" >Great Reviews</div>
-                  <div class="count-title" data-lang="es">Excelentes Criticas</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="count-area-content">
-                  <div class="count-digit">578</div>
-                  <div class="count-title" data-lang="en"  style="display: none;">Projects Done</div>
-                  <div class="count-title" data-lang="es" >Proyectos Realizados</div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="count-area-content">
-                  <div class="count-digit">26</div>
-                  <div class="count-title" data-lang="en" style="display: none;">Awards Won</div>
-                  <div class="count-title" data-lang="es">Reconocimientos Ganados</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="sub-footer mt-4">
+      <p>© 2025 C.E.yD. Todos los derechos reservados.</p>
     </div>
+  </footer>
 
-    <div class="more-info">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="more-info-content">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="left-image">
-                    <img src="assets/images/more-info.jpg" alt="">
-                  </div>
-                </div>
-                <div class="col-md-6 align-self-center">
-                  <div class="right-content">
-                    <span data-lang="en"  style="display: none;">Who we are</span>
-                    <h2 data-lang="en"  style="display: none;">Get to know about <em>our company</em></h2>
-                    <p data-lang="en"  style="display: none;">A long history with specialists in economic disciplines, with personal and team recognition for their talents and performance are within your reach to take your company to scale to new levels.</p>
-                    <a href="#" class="filled-button" data-lang="en"  style="display: none;">Read More</a>
-                    <span data-lang="es" >Quienes somos?</span>
-                    <h2 data-lang="es" >Conozca sobre <em> nuestra empresa</em></h2>
-                    <p data-lang="es" >Una larga trayectoria con especialistas en disciplinas económicas, con reconocimiento personal y de equipo por sus talentos y desempeño están a su alcance para llevar su empresa a escalar a nuevos niveles.</p>
-                    <a href="#" class="filled-button" data-lang="es" >Ver mas</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testimonials">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2 data-lang="en" style="display: none;" >What they say <em>about us?</em></h2>
-              <span data-lang="en" style="display: none;">testimonials from our greatest clients</span>
-              <h2 data-lang="es" >¿Que dicen de <em>Nuesta Empresa?</em></h2>
-              <span data-lang="es" >testimonios de nuestros clientes</span>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="owl-testimonials owl-carousel">
-              
-              <div class="testimonial-item">
-                <div class="inner-content">
-                  <h4>George Walker</h4>
-                  <span>Chief Financial Analyst</span>
-                  <p>"Nulla ullamcorper, ipsum vel condimentum congue, mi odio vehicula tellus, sit amet malesuada justo sem sit amet quam. Pellentesque in sagittis lacus."</p>
-                </div>
-                <img src="http://placehold.it/60x60" alt="">
-              </div>
-              
-              <div class="testimonial-item">
-                <div class="inner-content">
-                  <h4>John Smith</h4>
-                  <span>Market Specialist</span>
-                  <p>"In eget leo ante. Sed nibh leo, laoreet accumsan euismod quis, scelerisque a nunc. Mauris accumsan, arcu id ornare malesuada, est nulla luctus nisi."</p>
-                </div>
-                <img src="http://placehold.it/60x60" alt="">
-              </div>
-              
-              <div class="testimonial-item">
-                <div class="inner-content">
-                  <h4>David Wood</h4>
-                  <span>Chief Accountant</span>
-                  <p>"Ut ultricies maximus turpis, in sollicitudin ligula posuere vel. Donec finibus maximus neque, vitae egestas quam imperdiet nec. Proin nec mauris eu tortor consectetur tristique."</p>
-                </div>
-                <img src="http://placehold.it/60x60" alt="">
-              </div>
-              
-              <div class="testimonial-item">
-                <div class="inner-content">
-                  <h4>Andrew Boom</h4>
-                  <span>Marketing Head</span>
-                  <p>"Curabitur sollicitudin, tortor at suscipit volutpat, nisi arcu aliquet dui, vitae semper sem turpis quis libero. Quisque vulputate lacinia nisl ac lobortis."</p>
-                </div>
-                <img src="http://placehold.it/60x60" alt="">
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="callback-form">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Request a <em>call back</em></h2>
-              <span>Etiam suscipit ante a odio consequat</span>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="contact-form">
-              <form id="contact" action="" method="post">
-                <div class="row">
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="border-button">Send Message</button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="partners">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="owl-partners owl-carousel">
-            
-              <div class="partner-item">
-                <img src="assets/images/client-01.png" title="1" alt="1">
-              </div>
-              
-              <div class="partner-item">
-                <img src="assets/images/client-01.png" title="2" alt="2">
-              </div>
-              
-              <div class="partner-item">
-                <img src="assets/images/client-01.png" title="3" alt="3">
-              </div>
-              
-              <div class="partner-item">
-                <img src="assets/images/client-01.png" title="4" alt="4">
-              </div>
-              
-              <div class="partner-item">
-                <img src="assets/images/client-01.png" title="5" alt="5">
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Footer Starts Here -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 footer-item">
-            <h4>Finance Business</h4>
-            <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
-            <ul class="social-icons">
-              <li><a rel="nofollow" href="https://fb.com/templatemo" target="_blank"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 footer-item">
-            <h4>Useful Links</h4>
-            <ul class="menu-list">
-              <li><a href="#">Vivamus ut tellus mi</a></li>
-              <li><a href="#">Nulla nec cursus elit</a></li>
-              <li><a href="#">Vulputate sed nec</a></li>
-              <li><a href="#">Cursus augue hasellus</a></li>
-              <li><a href="#">Lacinia ac sapien</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 footer-item">
-            <h4>Additional Pages</h4>
-            <ul class="menu-list">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">How We Work</a></li>
-              <li><a href="#">Quick Support</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 footer-item last-item">
-            <h4>Contact Us</h4>
-            <div class="contact-form">
-              <form id="contact footer-contact" action="" method="post">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="filled-button">Send Message</button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
-    <div class="sub-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <p>Copyright &copy; 2020 Financial Business Co., Ltd.
-            
-            - Design: <a rel="nofollow noopener" href="samuellajud.github.io" target="_blank">Samuel Lajud</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/accordions.js"></script>
-
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
-     <script>
-      function setLanguage(lang) {
-        var elements = document.querySelectorAll('[data-lang]');
-
-        elements.forEach(function(elements) {
-        // Si el valor del atributo data-lang coincide con el idioma especificado, muestra el elemento
-          if (elements.getAttribute('data-lang') === lang) {
-            elements.style.display = '';
-          } else {
-            // Si no coincide, oculta el elemento
-            elements.style.display = 'none';
-          }
-        });
-      }
-      </script>
-  </body>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function setLanguage(lang) {
+      alert("Idioma cambiado a: " + lang);
+    }
+  </script>
+</body>
 </html>
