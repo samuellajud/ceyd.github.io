@@ -4,14 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>C.E.yD. - Consultoría Financiera</title>
-
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Google Fonts: Merriweather (serif) y Poppins (sans-serif) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-  <!-- Estilo personalizado -->
   <style>
     :root {
       --primary: #556B2F;      /* Verde oliva */
@@ -27,39 +23,61 @@
     }
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Merriweather', serif;
-      color: var(--primary);
+      color: var(--accent);
     }
     .navbar {
-      background-color: var(--secondary) !important;
-      border-bottom: 2px solid var(--primary);
+      background-color: var(--primary) !important;
+      border-bottom: 2px solid var(--secondary);
     }
     .navbar-brand h2 {
-      color: var(--accent);
+      color: var(--text-light);
       font-family: 'Merriweather', serif;
       font-weight: 700;
       letter-spacing: 2px;
+      margin-bottom: 0;
+    }
+    .navbar-brand small {
+      color: var(--secondary);
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      display: block;
     }
     .nav-link {
-      color: var(--primary) !important;
+      color: var(--secondary) !important;
       font-weight: 500;
       transition: color 0.2s;
     }
     .nav-link:hover {
       color: var(--accent) !important;
     }
-    .main-banner {
-      background-image: url('assets/images/banner-image.jpg');
-      background-size: cover;
-      background-position: center;
-      min-height: 320px;
-      display: flex;
-      align-items: center;
+    .login-register {
+      margin-left: 1rem;
     }
-    .main-banner .text-content {
-      background: rgba(26, 35, 126, 0.7); /* azul marino translúcido */
+    .login-register a {
+      color: var(--secondary);
+      font-weight: 500;
+      margin-left: 0.5rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .login-register a:hover {
+      color: var(--accent);
+    }
+    .main-banner {
+      background: var(--accent);
       color: var(--text-light);
-      border-radius: 12px;
-      max-width: 500px;
+      padding: 2.5rem 0 2rem 0;
+      text-align: center;
+    }
+    .main-banner h1 {
+      font-size: 2.2rem;
+      font-family: 'Merriweather', serif;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+    .main-banner p {
+      font-size: 1.1rem;
+      color: var(--secondary);
     }
     .section-heading h2 {
       color: var(--accent);
@@ -71,38 +89,55 @@
       font-size: 1.1rem;
       font-family: 'Poppins', sans-serif;
     }
-    .service-item {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(85,107,47,0.07);
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-      border: 1px solid var(--secondary);
-      transition: box-shadow 0.2s;
-    }
-    .service-item:hover {
-      box-shadow: 0 4px 20px rgba(26,35,126,0.12);
-      border-color: var(--accent);
-    }
-    .service-item h4 {
-      color: var(--primary);
-      font-family: 'Merriweather', serif;
-      margin-top: 1rem;
-    }
-    .service-item .filled-button {
+    .service-card {
       background: var(--primary);
       color: var(--text-light);
-      border: none;
-      padding: 0.5rem 1.2rem;
+      border-radius: 12px;
+      padding: 1.5rem 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(85,107,47,0.07);
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .service-card img {
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      width: 100%;
+      max-height: 120px;
+      object-fit: cover;
+    }
+    .service-card h4 {
+      color: var(--secondary);
+      font-family: 'Merriweather', serif;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .service-card p {
+      color: var(--text-light);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .service-card .btn {
+      background: var(--secondary);
+      color: var(--primary);
       border-radius: 20px;
-      margin-top: 1rem;
-      text-decoration: none;
       font-weight: 500;
+      border: none;
       transition: background 0.2s;
     }
-    .service-item .filled-button:hover {
+    .service-card .btn:hover {
       background: var(--accent);
       color: var(--text-light);
+    }
+    .contact-section {
+      background: #f9f7f3;
+      padding: 2rem 0;
+    }
+    .contact-section .section-heading h2 {
+      color: var(--primary);
     }
     .contact-form .form-control {
       border-radius: 8px;
@@ -119,7 +154,7 @@
       background: var(--primary);
     }
     footer {
-      background: var(--primary);
+      background: var(--accent);
       color: var(--text-light);
       padding: 2rem 0 1rem 0;
       margin-top: 3rem;
@@ -134,7 +169,7 @@
       transition: color 0.2s;
     }
     footer a:hover {
-      color: var(--accent);
+      color: var(--primary);
     }
     .sub-footer {
       border-top: 1px solid rgba(233,216,166,0.3);
@@ -144,89 +179,75 @@
       color: var(--secondary);
       font-size: 0.95rem;
     }
-    .language-selector button {
-      background: var(--accent);
-      color: var(--text-light);
-      border: none;
-      border-radius: 50px;
-      padding: 0.3rem 1rem;
-      margin-left: 0.5rem;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .language-selector button:hover {
-      background: var(--primary);
+    @media (max-width: 767px) {
+      .main-banner h1 {
+        font-size: 1.5rem;
+      }
+      .service-card {
+        min-height: 220px;
+      }
     }
   </style>
 </head>
-
 <body>
-
-  <!-- Selector de idioma -->
-  <div class="language-selector position-absolute top-0 end-0 p-2">
-    <button onclick="setLanguage('es')">ES</button>
-    <button onclick="setLanguage('en')">EN</button>
-  </div>
-
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#"><h2>C.E.yD.</h2><h3> Contabilidad, Economia y Datos</h3></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="cotizaciones.html">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">Casos de Éxito</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-        </ul>
+      <a class="navbar-brand d-flex flex-column" href="#">
+        <h2>C.E.yD</h2>
+        <small>CONTABILIDAD · ECONOMÍA · DATOS</small>
+      </a>
+      <div class="d-flex align-items-center ms-auto">
+        <div class="login-register">
+          <a href="login.html">Ingresar</a> /
+          <a href="register.html">Registrarse</a>
+        </div>
+        <div class="ms-3">
+          <button class="btn btn-sm btn-outline-light">ES</button>
+          <button class="btn btn-sm btn-outline-light">EN</button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="main-banner py-5">
-    <div class="container text-white">
-      <div class="text-content p-4">
-        <h4>SERVICIOS INTELIGENTES</h4>
-        <p>Maximizamos el valor financiero de tu empresa con análisis y automatización inteligente.</p>
-      </div>
+  <!-- Main Banner -->
+  <section class="main-banner">
+    <div class="container">
+      <h1>SERVICIOS INTELIGENTES</h1>
+      <p>Maximizamos el valor financiero de tu empresa con análisis y automatización inteligente</p>
     </div>
   </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="py-5">
+  <section class="py-5">
     <div class="container">
-      <div class="section-heading mb-4">
+      <div class="section-heading mb-4 text-center">
         <h2>Servicios Profesionales</h2>
         <span>Soluciones financieras a medida</span>
       </div>
       <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="service-item text-center">
-            <img src="assets/images/service-01.jpg" alt="" class="img-fluid rounded">
+        <div class="col-lg-4 col-md-6 mb-3">
+          <div class="service-card">
+            <img src="assets/images/service-01.jpg" alt="Estudios de Costos">
             <h4>Estudios de Costos</h4>
             <p>Optimización financiera de tu actividad agrícola y ganadera.</p>
-            <a href="#" class="filled-button">Ver más</a>
+            <a href="#" class="btn">Ver más</a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="service-item text-center">
-            <img src="assets/images/service-02.jpg" alt="" class="img-fluid rounded">
+        <div class="col-lg-4 col-md-6 mb-3">
+          <div class="service-card">
+            <img src="assets/images/service-02.jpg" alt="Rendimientos y Rentabilidad">
             <h4>Rendimientos y Rentabilidad</h4>
             <p>Identificamos oportunidades de mejora continua en tu negocio.</p>
-            <a href="#" class="filled-button">Ver más</a>
+            <a href="#" class="btn">Ver más</a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="service-item text-center">
-            <img src="assets/images/service-03.jpg" alt="" class="img-fluid rounded">
+        <div class="col-lg-4 col-md-6 mb-3">
+          <div class="service-card">
+            <img src="assets/images/service-03.jpg" alt="Financiamiento e Inversión">
             <h4>Financiamiento e Inversión</h4>
             <p>Asistencia integral para capitalización e inversión eficiente.</p>
-            <a href="#" class="filled-button">Ver más</a>
+            <a href="#" class="btn">Ver más</a>
           </div>
         </div>
       </div>
@@ -234,9 +255,9 @@
   </section>
 
   <!-- Contacto -->
-  <section id="contacto" class="py-5" style="background: #f9f7f3;">
+  <section class="contact-section" id="contacto">
     <div class="container">
-      <div class="section-heading mb-4">
+      <div class="section-heading mb-4 text-center">
         <h2>Contacto</h2>
         <span>Estamos para ayudarte</span>
       </div>
@@ -251,7 +272,7 @@
           <div class="col-12 mb-3">
             <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
           </div>
-          <div class="col-12">
+          <div class="col-12 text-center">
             <button type="submit" class="btn btn-primary">Enviar mensaje</button>
           </div>
         </div>
@@ -286,13 +307,5 @@
       <p>© 2025 C.E.yD. Todos los derechos reservados.</p>
     </div>
   </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    function setLanguage(lang) {
-      alert("Idioma cambiado a: " + lang);
-    }
-  </script>
 </body>
 </html>
