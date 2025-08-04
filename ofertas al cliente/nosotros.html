@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C.E.yD. - Consultoría Financiera</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1A237E;      /* Azul oscuro */
+      --secondary: #F5F7FA;    /* Fondo claro */
+      --accent: #4F8FF9;       /* Azul acento */
+      --card-bg: #fff;
+      --footer-bg: #222B45;
+      --text-dark: #222B45;
+      --text-light: #fff;
+      --border-radius: 18px;
+      --shadow: 0 4px 24px rgba(26,35,126,0.07);
+    }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background-color: var(--secondary);
+      color: var(--text-dark);
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background: var(--card-bg);
+      box-shadow: 0 2px 8px rgba(26,35,126,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0.75rem 0;
+    }
+    .navbar-brand img {
+      height: 38px;
+      margin-right: 12px;
+    }
+    .navbar-nav .nav-link {
+      color: var(--primary) !important;
+      font-weight: 500;
+      margin-right: 1.2rem;
+      transition: color 0.2s;
+      font-size: 1rem;
+    }
+    .navbar-nav .nav-link:hover {
+      color: var(--accent) !important;
+    }
+    .navbar .btn-demo {
+      background: var(--accent);
+      color: var(--text-light);
+      border-radius: 30px;
+      font-weight: 600;
+      padding: 0.5rem 1.4rem;
+      border: none;
+      box-shadow: 0 2px 8px rgba(79,143,249,0.08);
+      transition: background 0.2s;
+    }
+    .navbar .btn-demo:hover {
+      background: var(--primary);
+      color: var(--text-light);
+    }
+    .hero {
+      background: var(--secondary);
+      padding: 5rem 0 3rem 0;
+      text-align: center;
+    }
+    .hero-title {
+      font-size: 2.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+      letter-spacing: -1px;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #4F5D75;
+      margin-bottom: 2.2rem;
+      font-weight: 400;
+    }
+    .hero .btn-cta {
+      background: var(--accent);
+      color: var(--text-light);
+      border-radius: 30px;
+      font-weight: 600;
+      padding: 0.8rem 2.2rem;
+      font-size: 1.1rem;
+      border: none;
+      box-shadow: 0 2px 8px rgba(79,143,249,0.08);
+      transition: background 0.2s;
+    }
+    .services-section {
+      background: var(--secondary);
+      padding: 4rem 0;
+    }
+    .services-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 2.5rem;
+    }
+    .service-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .service-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: var(--border-radius);
+      margin-bottom: 1rem;
+    }
+    .service-card:hover {
+      box-shadow: 0 8px 32px rgba(26,35,126,0.12);
+    }
+    .carousel {
+      margin: 3rem 0;
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .clients-carousel {
+      margin: 3rem 0;
+    }
+    .client-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .client-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    footer {
+      background: var(--footer-bg);
+      color: var(--text-light);
+      padding: 3rem 0;
+    }
+    footer a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: var(--accent);
+    }
+    /* Sección Nosotros */
+    .about-section {
+      background-color: var(--secondary);
+      padding: 4rem 0;
+    }
+    .about-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .about-section h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .about-section p {
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+    .card {
+      border-radius: var(--border-radius);
+    }
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .card-text {
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="ImagenLOG"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+        </ul>
+        <a href="#demo" class="btn btn-demo ms-3">Solicita una Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Consultoría Financiera para Empresas</h1>
+      <p class="hero-subtitle">Optimiza tus procesos financieros y toma decisiones estratégicas con nuestra ayuda.</p>
+      <a href="#contacto" class="btn btn-cta">Solicita Cotización</a>
+    </div>
+  </section>
+
+  <!-- Carousel -->
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/images/servicios.jpg" alt="Servicios">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/nosotros.jpg" alt="Nosotros">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/news.jpg" alt="News">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- Sección Nosotros -->
+  <section class="about-section" id="nosotros">
+    <div class="container">
+      <h2 class="text-center mb-4">Nosotros</h2>
+      <div class="row align-items-center mb-5">
+        <!-- Historia breve -->
+        <div class="col-lg-6">
+          <h3 class="mb-3">Nuestra Historia</h3>
+          <p>En C.E.yD., llevamos más de 10 años ayudando a empresas a optimizar sus procesos financieros, contables y estratégicos. Nuestro enfoque combina tecnología avanzada, análisis de datos y asesoría personalizada para garantizar el éxito de nuestros clientes.</p>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="assets/images/about-history.jpg" alt="Nuestra Historia" class="img-fluid rounded shadow">
+        </div>
+      </div>
+      <div class="row text-center">
+        <!-- Misión -->
+        <div class="col-md-4 mb-4">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body">
+              <i class="fas fa-bullseye fa-3x text-primary mb-3"></i>
+              <h4 class="card-title">Misión</h4>
+              <p class="card-text">Empoderar a empresas con soluciones financieras innovadoras que impulsen su crecimiento y sostenibilidad.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Visión -->
+        <div class="col-md-4 mb-4">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body">
+              <i class="fas fa-eye fa-3x text-primary mb-3"></i>
+              <h4 class="card-title">Visión</h4>
+              <p class="card-text">Ser el aliado estratégico líder en consultoría financiera para empresas en América Latina.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Valores -->
+        <div class="col-md-4 mb-4">
+          <div class="card border-0 shadow h-100">
+            <div class="card-body">
+              <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
+              <h4 class="card-title">Valores</h4>
+              <p class="card-text">Compromiso, innovación, transparencia y excelencia en cada solución que ofrecemos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clientes Carousel -->
+  <section class="clients-carousel">
+    <div class="container">
+      <h2 class="text-center">Nuestros Clientes</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="client-card">
+            <img src="assets/images/client1.jpg" alt="Cliente 1">
+            <p>Acompañamiento único</p>
+            <footer>- Juan Pérez</footer>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="client-card">
+            <img src="assets/images/client2.jpg" alt="Cliente 2">
+            <p>Acompañamiento único</p>
+            <footer>- María López</footer>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="client-card">
+            <img src="assets/images/client3.jpg" alt="Cliente 3">
+            <p>Acompañamiento único</p>
+            <footer>- Carlos Gómez</footer>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="client-card">
+            <img src="assets/images/client4.jpg" alt="Cliente 4">
+            <p>Acompañamiento único</p>
+            <footer>- Ana Martínez</footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p>© 2025 C.E.yD. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
