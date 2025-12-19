@@ -1,317 +1,757 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C.E.yD. | Servicios</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1A237E;
+      --secondary: #F5F7FA;
+      --accent: #4F8FF9;
+      --card-bg: #fff;
+      --footer-bg: #222B45;
+      --text-dark: #222B45;
+      --text-light: #fff;
+      --border-radius: 18px;
+      --shadow: 0 4px 24px rgba(26,35,126,0.07);
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background-color: var(--secondary);
+      color: var(--text-dark);
+      margin: 0;
+    }
+    .navbar {
+      background: var(--card-bg);
+      box-shadow: 0 2px 8px rgba(26,35,126,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0.75rem 0;
+    }
+    .navbar-brand img { height: 38px; margin-right: 12px; }
+    .navbar-nav .nav-link {
+      color: var(--primary) !important;
+      font-weight: 500;
+      margin-right: 1.2rem;
+      transition: color 0.2s;
+      font-size: 1rem;
+    }
+    .navbar-nav .nav-link:hover { color: var(--accent) !important; }
+    .navbar .btn-demo {
+      background: var(--accent);
+      color: var(--text-light);
+      border-radius: 30px;
+      font-weight: 600;
+      padding: 0.5rem 1.4rem;
+      border: none;
+      box-shadow: 0 2px 8px rgba(79,143,249,0.08);
+      transition: background 0.2s;
+    }
+    .navbar .btn-demo:hover { background: var(--primary); color: var(--text-light); }
+    .navbar .login-register { margin-left: 1.5rem; }
+    .navbar .login-register a {
+      color: var(--primary);
+      font-weight: 500;
+      margin-left: 0.8rem;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .navbar .login-register a:hover { color: var(--accent); }
 
-  <head>
+    .hero {
+      background: var(--secondary);
+      padding: 5rem 0 3rem 0;
+      text-align: center;
+    }
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.5px;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: #4F5D75;
+      margin-bottom: 2rem;
+    }
+    .hero .btn-cta {
+      background: var(--accent);
+      color: var(--text-light);
+      border-radius: 30px;
+      font-weight: 600;
+      padding: 0.8rem 2.2rem;
+      font-size: 1.05rem;
+      border: none;
+      box-shadow: 0 2px 8px rgba(79,143,249,0.08);
+      transition: background 0.2s;
+    }
+    .hero .btn-cta:hover { background: var(--primary); }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #E8F0FE;
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: #4F5D75;
+      max-width: 720px;
+      margin: 0 auto 2.5rem auto;
+      font-size: 1rem;
+    }
+    .services-section {
+      background: var(--secondary);
+      padding: 4rem 0 2rem 0;
+    }
+    .service-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 1.8rem 1.5rem;
+      margin-bottom: 1.8rem;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+      border: none;
+    }
+    .service-card:hover { box-shadow: 0 8px 32px rgba(26,35,126,0.12); transform: translateY(-4px); }
+    .service-icon { font-size: 2.1rem; color: var(--accent); }
+    .service-title { font-size: 1.25rem; font-weight: 600; color: var(--primary); }
+    .service-desc { color: #4F5D75; font-size: 1rem; }
+    .badge-soft {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #EEF2FF;
+      color: var(--primary);
+      border-radius: 12px;
+      padding: 0.35rem 0.75rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
 
-    <title>Finance Business - Services</title>
+    .highlight-card {
+      background: linear-gradient(135deg, #1A237E, #4F8FF9);
+      color: var(--text-light);
+      border-radius: var(--border-radius);
+      padding: 2.2rem;
+      box-shadow: var(--shadow);
+    }
+    .highlight-card h3 { font-weight: 700; margin-bottom: 1rem; }
+    .highlight-card p { opacity: 0.9; }
+    .highlight-list li { margin-bottom: 0.6rem; }
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    .timeline {
+      display: grid;
+      gap: 1.2rem;
+    }
+    .timeline-step {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 1.4rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .step-number {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      background: #E8F0FE;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .step-content h5 { margin: 0 0 0.4rem 0; color: var(--primary); font-weight: 700; }
+    .step-content p { margin: 0; color: #4F5D75; }
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-finance-business.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-<!--
+    .plan-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      border: 1px solid #E2E8F0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: 100%;
+    }
+    .plan-card.featured { border: 2px solid var(--accent); box-shadow: 0 12px 36px rgba(79,143,249,0.15); }
+    .plan-name { font-weight: 700; color: var(--primary); font-size: 1.2rem; }
+    .plan-price { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+    .plan-price span { font-size: 0.95rem; color: #4F5D75; font-weight: 500; }
+    .plan-benefits { list-style: none; padding: 0; margin: 0; text-align: left; }
+    .plan-benefits li { margin-bottom: 0.6rem; color: #4F5D75; display: flex; gap: 0.5rem; }
+    .plan-benefits i { color: #22c55e; margin-top: 4px; }
 
-Finance Business TemplateMo
+    .cta-card {
+      background: linear-gradient(135deg, #4F8FF9, #1A237E);
+      color: var(--text-light);
+      border-radius: var(--border-radius);
+      padding: 2.2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .cta-card h3 { font-weight: 700; margin-bottom: 0.8rem; }
+    .cta-card p { opacity: 0.9; margin-bottom: 1.2rem; }
+    .cta-card .btn-light { border-radius: 999px; font-weight: 700; padding: 0.7rem 1.6rem; }
 
-https://templatemo.com/tm-545-finance-business
+    .faq .accordion-button {
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--card-bg);
+      border: none;
+    }
+    .faq .accordion-item { border: none; box-shadow: var(--shadow); margin-bottom: 1rem; border-radius: var(--border-radius); overflow: hidden; }
+    .faq .accordion-body { color: #4F5D75; }
 
--->
-  </head>
+    .contact-section {
+      background: var(--card-bg);
+      padding: 3rem 1.5rem 2rem 1.5rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+    }
+    .contact-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .contact-form label {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+    }
+    .contact-form .form-control {
+      border-radius: 12px;
+      border: 1px solid #E2E8F0;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      background: #F5F7FA;
+    }
+    .contact-form .btn-primary {
+      background: var(--accent);
+      border: none;
+      border-radius: 24px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.75rem 2rem;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+    .contact-form .btn-primary:hover { background: var(--primary); }
 
-  <body>
+    .clients-section,
+    .integrations-section {
+      background: var(--secondary);
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+    .clients-title,
+    .integrations-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+    }
+    .clients-logos img,
+    .integrations-logos img {
+      height: 38px;
+      margin: 0 1.2rem 1rem 1.2rem;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .clients-logos img:hover,
+    .integrations-logos img:hover { opacity: 1; }
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
+    .testimonials-section {
+      background: var(--secondary);
+      padding: 3rem 0 2rem 0;
+    }
+    .testimonials-title {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+    .testimonial-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 1.6rem;
+      margin-bottom: 1.5rem;
+      border: none;
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .testimonial-quote {
+      font-size: 1.05rem;
+      color: #4F5D75;
+      font-style: italic;
+      margin: 0;
+    }
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    footer {
+      background: var(--footer-bg);
+      color: var(--text-light);
+      padding: 3rem 0 1.2rem 0;
+      margin-top: 3rem;
+    }
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-col { flex: 1 1 220px; min-width: 180px; }
+    .footer-col h5 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col ul li { margin-bottom: 0.7rem; }
+    .footer-col ul li a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 1rem;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .footer-col ul li a:hover { opacity: 1; color: var(--accent); }
+    .footer-logo { font-size: 1.5rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem; letter-spacing: 1px; }
+    .footer-bottom {
+      border-top: 1px solid #2E3A59;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      text-align: center;
+      color: #A0AEC0;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 991px) {
+      .hero-title { font-size: 2.2rem; }
+      .section-title { font-size: 1.6rem; }
+      .footer-columns { flex-direction: column; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="../index.html">
+        <img src="../assets/CEyD.mp4" alt="C.E.yD Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#soluciones">Soluciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#metodologia">Metodología</a></li>
+          <li class="nav-item"><a class="nav-link" href="#planes">Planes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+        <a href="#contacto" class="btn btn-demo ms-3">Agenda una demo</a>
+        <div class="login-register ms-4">
+          <a href="../login.html">Ingresar</a> /
+          <a href="../register.html">Registrarse</a>
         </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
+      </div>
+    </div>
+  </nav>
 
-    <!-- Header -->
-    <div class="sub-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-xs-12">
-            <ul class="left-info">
-              <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00-17:00</a></li>
-              <li><a href="#"><i class="fa fa-phone"></i>090-080-0760</a></li>
-            </ul>
+  <section class="hero">
+    <div class="container">
+      <div class="pill mb-3"><i class="fas fa-bolt"></i> Servicios especializados</div>
+      <h1 class="hero-title">Soluciones financieras a la medida de tu empresa</h1>
+      <p class="hero-subtitle">Combina estrategia, datos y tecnología para optimizar tu rentabilidad, liberar flujo de efectivo y tomar decisiones seguras.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="#planes" class="btn btn-cta">Ver planes</a>
+        <a href="#soluciones" class="btn btn-outline-primary rounded-pill px-4">Explorar servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section" id="soluciones">
+    <div class="container">
+      <h2 class="section-title">Nuestras soluciones</h2>
+      <p class="section-subtitle">Un equipo multidisciplinario que combina experiencia financiera, contable y de análisis de datos para acompañarte en cada etapa.</p>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card h-100">
+            <div class="badge-soft"><i class="fas fa-seedling"></i> Agro & PyME</div>
+            <span class="service-icon"><i class="fas fa-chart-line"></i></span>
+            <div class="service-title">Control de costos y precios</div>
+            <div class="service-desc">Estructuramos tus costos productivos, calculamos precios óptimos y modelamos escenarios de margen y cash-flow.</div>
           </div>
-          <div class="col-md-4">
-            <ul class="right-icons">
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-            </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card h-100">
+            <div class="badge-soft"><i class="fas fa-database"></i> Data & BI</div>
+            <span class="service-icon"><i class="fas fa-chart-pie"></i></span>
+            <div class="service-title">Paneles y métricas clave</div>
+            <div class="service-desc">Diseñamos dashboards accionables (Power BI / Data Studio) con KPIs de ventas, liquidez, rentabilidad y eficiencia operativa.</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card h-100">
+            <div class="badge-soft"><i class="fas fa-shield-alt"></i> Riesgo</div>
+            <span class="service-icon"><i class="fas fa-hand-holding-usd"></i></span>
+            <div class="service-title">Financiamiento e inversiones</div>
+            <div class="service-desc">Evaluamos líneas bancarias y alternativas, negociamos condiciones, modelamos tasas efectivas y acompañamos desembolsos.</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card h-100">
+            <div class="badge-soft"><i class="fas fa-briefcase"></i> CFO as a Service</div>
+            <span class="service-icon"><i class="fas fa-user-tie"></i></span>
+            <div class="service-title">Dirección financiera externa</div>
+            <div class="service-desc">Gestión financiera integral: planificación, cash management, relación bancaria, reporting gerencial y gobierno corporativo.</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card h-100">
+            <div class="badge-soft"><i class="fas fa-sync"></i> Automatización</div>
+            <span class="service-icon"><i class="fas fa-robot"></i></span>
+            <div class="service-title">Automatización de procesos</div>
+            <div class="service-desc">Flujos automáticos para conciliaciones, emisión de reportes, seguimiento de cobranzas y control de stock con alertas.</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card h-100">
+            <div class="badge-soft"><i class="fas fa-people-arrows"></i> Gobierno</div>
+            <span class="service-icon"><i class="fas fa-bullseye"></i></span>
+            <div class="service-title">Rentabilidad y performance</div>
+            <div class="service-desc">Identificamos palancas de eficiencia, construimos OKRs financieros y diseñamos tableros para seguimiento ejecutivo mensual.</div>
           </div>
         </div>
       </div>
     </div>
-    
-    <header class="">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand" href="index.html" data-lang="en"><h2>Finance Business</h2></a>
-          <a class="navbar-brand" href="../index.html" data-lang="es" style="display: none;"><h2>Finanzas para Empresas</h2></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html" data-lang="en">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-                <a class="nav-link" href="index.html" data-lang="es" style="display: none;">Inicio
-                  <span class="sr-only">(current)</span>
-                </a>
+  </section>
 
-              <li class="nav-item  active">
-                <a class="nav-link" href="services.html" data-lang="en">Our Services</a>
-                <a class="nav-link" href="services.html" data-lang="es" style="display: none;">Nuestros Servicios</a>
-              </li>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="about.html" data-lang="en">About Us</a>
-              <a class="nav-link" href="about.html" data-lang="es" style="display: none;">Sobre Nosotros</a>
-            </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html" data-lang="en">Contact Us</a>
-                <a class="nav-link" href="contact.html" data-lang="es" style="display: none;">Contacto</a>
-              </li>
-            </ul>
+  <section class="clients-section" id="clientes">
+    <div class="container">
+      <div class="clients-title">Empresas que confían en nosotros</div>
+      <div class="clients-logos d-flex flex-wrap justify-content-center align-items-center">
+        <img src="../assets/images/client1.png" alt="Cliente 1">
+        <img src="../assets/images/client2.png" alt="Cliente 2">
+        <img src="../assets/images/client3.png" alt="Cliente 3">
+        <img src="../assets/images/client4.png" alt="Cliente 4">
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials-section" id="testimonios">
+    <div class="container">
+      <div class="testimonials-title">Testimonios</div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">“C.E.yD estructuró nuestros costos y armó tableros semanales; liberamos caja y tomamos decisiones con datos.”</div>
+            <div class="testimonial-author">Mariana Torres — CFO PyME industrial</div>
           </div>
         </div>
-      </nav>
-    </header>
-    <!-- Page Content -->
-    <div class="page-heading header-text">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1>Our Services</h1>
-            <span>We are over 5 years of experience</span>
+        <div class="col-md-6">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">“Nos acompañaron a renegociar líneas bancarias y a automatizar reportes financieros en menos de 45 días.”</div>
+            <div class="testimonial-author">Julián Álvarez — Director Financiero</div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="single-services">
-      <div class="container">
-        <div class="row" id="tabs">
-          <div class="col-md-4">
-            <ul>
-              <li><a href='#tabs-1'>Market Analysis <i class="fa fa-angle-right"></i></a></li>
-              <li><a href='#tabs-2'>Financial Data <i class="fa fa-angle-right"></i></a></li>
-              <li><a href='#tabs-3'>Accounting Service <i class="fa fa-angle-right"></i></a></li>
-              <li><a href='#tabs-4'>Overall Evaluation <i class="fa fa-angle-right"></i></a></li>
-            </ul>
-          </div>
-          <div class="col-md-8">
-            <section class='tabs-content'>
-              <article id='tabs-1'>
-                <img src="assets/images/single_service_01.jpg" alt="">
-                <h4>Market Analysis</h4>
-                <p>Vivamus sed feugiat elit. Pellentesque pretium, massa at placerat vehicula, neque turpis pulvinar tortor, eget convallis lorem odio non tortor. Donec massa est, fermentum sit amet felis ac, maximus luctus elit. Vivamus aliquet, dolor id imperdiet imperdiet, dui diam aliquet dui, a euismod metus enim ac velit. Vivamus eu tristique odio, vel tristique quam.
-                <br><br>Proin eu molestie risus. Etiam suscipit pretium odio, at consectetur nisi. Sed ut dolor in augue cursus ultrices. Vivamus mauris turpis, auctor vel facilisis in, tincidunt vel diam. Sed vitae scelerisque orci. Nunc non magna orci. Aliquam commodo mauris ante.</p>
-              </article>
-              <article id='tabs-2'>
-                <img src="assets/images/campo-3.jpg" alt="">
-                <h4>Financial Data</h4>
-                <p>Sed ut dolor in augue cursus ultrices. Vivamus mauris turpis, auctor vel facilisis in, tincidunt vel diam. Sed vitae scelerisque orci. Nunc non magna orci. Aliquam commodo mauris ante, quis posuere nibh vestibulum sit amet
-                <br><br>Pellentesque pretium, massa at placerat vehicula, neque turpis pulvinar tortor, eget convallis lorem odio non tortor. Donec massa est, fermentum sit amet felis ac, maximus luctus elit. Vivamus aliquet, dolor id imperdiet imperdiet, dui diam aliquet dui, a euismod metus enim ac velit. Vivamus eu tristique odio, vel tristique quam.</p>
-              </article>
-              <article id='tabs-3'>
-                <img src="assets/images/single_service_03.jpg" alt="">
-                <h4>Accounting Service</h4>
-                <p>Mauris lobortis quam id dictum dignissim. Donec pellentesque erat dolor, cursus dapibus turpis hendrerit quis. Suspendisse at suscipit arcu. Nulla sed erat lectus. Nulla facilisi. In sit amet neque sapien. Donec scelerisque mi at gravida efficitur. Nunc lacinia a est eu malesuada. Curabitur eleifend elit sapien, sed pulvinar orci luctus eget. 
-                <br><br>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc vel ultrices nulla, ac tincidunt eros. Aenean quis tellus velit. Praesent pretium justo non auctor condimentum.</p>
-              </article>
-              <article id='tabs-4'>
-                <img src="assets/images/single_service_04.jpg" alt="">
-                <h4>Overall Evaluation</h4>
-                <p>Integer vehicula sapien quis dolor efficitur, eget molestie eros tempus. Curabitur sollicitudin, tortor at suscipit volutpat, nisi arcu aliquet dui, vitae semper sem turpis quis libero. Quisque vulputate lacinia nisl ac lobortis. Ut ultricies maximus turpis, in sollicitudin ligula posuere vel. 
-                <br><br>Donec finibus maximus neque, vitae egestas quam imperdiet nec. Proin nec mauris eu tortor consectetur tristique. Etiam suscipit ante a odio consequat, in ornare lacus suscipit. Cras ac libero massa. Quisque rhoncus velit feugiat vulputate mollis. Donec nisl eros, malesuada sed nisi id, condimentum condimentum quam.</p>
-              </article>
-            </section>
-          </div>
-        </div>
+  <section class="integrations-section" id="integraciones">
+    <div class="container">
+      <div class="integrations-title">Integraciones con tus herramientas</div>
+      <div class="integrations-logos d-flex flex-wrap justify-content-center align-items-center">
+        <img src="../assets/images/xero.png" alt="Xero">
+        <img src="../assets/images/excel.png" alt="Excel">
+        <img src="../assets/images/powerbi.png" alt="Power BI">
+        <img src="../assets/images/quickbooks.png" alt="QuickBooks">
       </div>
     </div>
+  </section>
 
-    <div class="callback-form callback-services">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Request a <em>call back</em></h2>
-              <span>interdum nisl ac urna tempor mollis</span>
+  <section class="py-5" id="metodologia">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <div class="col-lg-5">
+          <div class="highlight-card">
+            <h3>¿Por qué C.E.yD?</h3>
+            <p>Unimos experiencia operativa, conocimiento normativo y analítica avanzada para entregar resultados medibles en semanas.</p>
+            <ul class="highlight-list ps-3">
+              <li>Implementación rápida con playbooks probados.</li>
+              <li>Visibilidad de flujo y márgenes en tiempo real.</li>
+              <li>Equipo senior con foco en ejecución.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <h2 class="section-title mb-3">Metodología en 5 pasos</h2>
+          <p class="section-subtitle">Un framework iterativo que prioriza quick wins y deja capacidades instaladas en tu equipo.</p>
+          <div class="timeline">
+            <div class="timeline-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h5>Diagnóstico 360°</h5>
+                <p>Relevamos procesos, datos y contratos financieros. Identificamos brechas y riesgos inmediatos.</p>
+              </div>
             </div>
-          </div>
-          <div class="col-md-12">
-            <div class="contact-form">
-              <form id="contact" action="" method="post">
-                <div class="row">
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="border-button">Send Message</button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
+            <div class="timeline-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h5>Hoja de ruta priorizada</h5>
+                <p>Definimos objetivos de liquidez, margen y control, con hitos de 30-60-90 días y KPIs claros.</p>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="partners">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="owl-partners owl-carousel">
-              <div class="partner-item">
-                <img src="assets/images/client-01.png" alt="">
+            <div class="timeline-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h5>Implementación</h5>
+                <p>Automatizamos reportes, estructuramos modelos financieros y estandarizamos políticas.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h5>Seguimiento ejecutivo</h5>
+                <p>Revisiones semanales y comité mensual con tableros de desempeño y alertas tempranas.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h5>Transferencia y soporte</h5>
+                <p>Capacitamos a tu equipo, documentamos procesos y dejamos asistencia continua según plan.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-
-    <!-- Footer Starts Here -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 footer-item">
-            <h4>Finance Business</h4>
-            <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
-            <ul class="social-icons">
-              <li><a rel="nofollow" href="https://fb.com/templatemo" target="_blank"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
+  <section class="services-section" id="planes">
+    <div class="container">
+      <h2 class="section-title">Planes flexibles</h2>
+      <p class="section-subtitle">Escalamos contigo: desde un acompañamiento táctico hasta una gerencia financiera externa completa.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="plan-card h-100">
+            <div class="plan-name">Esencial</div>
+            <div class="plan-price">USD 890 <span>/ mes</span></div>
+            <ul class="plan-benefits">
+              <li><i class="fas fa-check"></i>Tablero financiero base</li>
+              <li><i class="fas fa-check"></i>Revisión de flujo y márgenes mensual</li>
+              <li><i class="fas fa-check"></i>KPIs de ventas y cobranzas</li>
+              <li><i class="fas fa-check"></i>Soporte por email</li>
             </ul>
-          </div>
-          <div class="col-md-3 footer-item">
-            <h4>Useful Links</h4>
-            <ul class="menu-list">
-              <li><a href="#">Vivamus ut tellus mi</a></li>
-              <li><a href="#">Nulla nec cursus elit</a></li>
-              <li><a href="#">Vulputate sed nec</a></li>
-              <li><a href="#">Cursus augue hasellus</a></li>
-              <li><a href="#">Lacinia ac sapien</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 footer-item">
-            <h4>Additional Pages</h4>
-            <ul class="menu-list">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">How We Work</a></li>
-              <li><a href="#">Quick Support</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 footer-item last-item">
-            <h4>Contact Us</h4>
-            <div class="contact-form">
-              <form id="contact footer-contact" action="" method="post">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="filled-button">Send Message</button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
-            </div>
+            <a href="#contacto" class="btn btn-outline-primary rounded-pill mt-auto">Quiero este plan</a>
           </div>
         </div>
-      </div>
-    </footer>
-    
-    <div class="sub-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <p>Copyright &copy; 2020 Financial Business Co., Ltd.
-            
-            - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+        <div class="col-md-4">
+          <div class="plan-card featured h-100">
+            <div class="badge-soft align-self-center"><i class="fas fa-star"></i> Recomendado</div>
+            <div class="plan-name">Crecimiento</div>
+            <div class="plan-price">USD 1.490 <span>/ mes</span></div>
+            <ul class="plan-benefits">
+              <li><i class="fas fa-check"></i>CFO part-time y comité mensual</li>
+              <li><i class="fas fa-check"></i>Automatización de reportes</li>
+              <li><i class="fas fa-check"></i>Modelos de pricing y escenarios</li>
+              <li><i class="fas fa-check"></i>Negociación bancaria</li>
+            </ul>
+            <a href="#contacto" class="btn btn-cta rounded-pill mt-auto">Hablar con un asesor</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="plan-card h-100">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-price">A medida <span>/ proyecto</span></div>
+            <ul class="plan-benefits">
+              <li><i class="fas fa-check"></i>Integración con ERP y BI corporativo</li>
+              <li><i class="fas fa-check"></i>Gobierno financiero y compliance</li>
+              <li><i class="fas fa-check"></i>PMO para transformación</li>
+              <li><i class="fas fa-check"></i>Equipo dedicado on-demand</li>
+            </ul>
+            <a href="#contacto" class="btn btn-outline-primary rounded-pill mt-auto">Agendar discovery</a>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <section class="py-5" id="faq">
+    <div class="container">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <p class="section-subtitle">Resolvemos las dudas más comunes antes de iniciar.</p>
+      <div class="faq accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+              ¿En cuánto tiempo veo resultados?
+            </button>
+          </h2>
+          <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Usualmente los quick wins se implementan en las primeras 4 semanas: tableros iniciales, control de caja y alertas de cobranzas. El plan completo se consolida en 90 días.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              ¿Trabajan con mi ERP/contabilidad actual?
+            </button>
+          </h2>
+          <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Sí. Nos integramos a tu stack actual (ERP, Excel, Power BI, Google Sheets, QuickBooks, Xero) y proponemos mejoras incrementales sin frenar la operación.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+              ¿Pueden acompañar procesos de financiamiento?
+            </button>
+          </h2>
+          <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Sí. Preparamos dossiers financieros, modelamos tasas efectivas, participamos en negociaciones y gestionamos desembolsos y garantías.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+              ¿Cómo es el trabajo con tu equipo interno?
+            </button>
+          </h2>
+          <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Creamos células mixtas con tus referentes, definimos rituales de seguimiento y dejamos documentación y capacitación para que los procesos perduren.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/accordions.js"></script>
+  <section class="contact-section" id="contacto">
+    <div class="contact-title">Hablemos de tu próximo hito financiero</div>
+    <form class="contact-form px-3">
+      <div class="mb-3">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+      </div>
+      <div class="mb-3">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Tu email">
+      </div>
+      <div class="mb-3">
+        <label for="mensaje">¿En qué podemos ayudarte?</label>
+        <textarea class="form-control" id="mensaje" rows="4" placeholder="Cuéntanos tus objetivos y plazos"></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Quiero hablar con un asesor</button>
+      </div>
+    </form>
+    <div class="container mt-4">
+      <div class="cta-card">
+        <h3>¿Necesitas algo urgente?</h3>
+        <p>Escríbenos a contacto@ceyd.com o agenda una llamada de 15 minutos para un diagnóstico express.</p>
+        <a class="btn btn-light" href="mailto:contacto@ceyd.com"><i class="fas fa-envelope me-2"></i>Enviar un correo</a>
+      </div>
+    </div>
+  </section>
 
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
+  <footer>
+    <div class="footer-columns">
+      <div class="footer-col">
+        <div class="footer-logo">C.E.yD</div>
+        <p>Consultoría financiera, contable y de datos para empresas que quieren crecer.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="#soluciones">Costos y precios</a></li>
+          <li><a href="#soluciones">Financiamiento</a></li>
+          <li><a href="#soluciones">CFO externo</a></li>
+          <li><a href="#soluciones">Automatización</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Recursos</h5>
+        <ul>
+          <li><a href="#metodologia">Metodología</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="../index.html#blog">Blog</a></li>
+          <li><a href="../index.html#clientes">Clientes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="mailto:contacto@ceyd.com">contacto@ceyd.com</a></li>
+          <li><a href="tel:+543811234567">+54 381 1234567</a></li>
+          <li><a href="#contacto">Solicitar demo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom mt-4">
+      <p>© 2025 C.E.yD. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
